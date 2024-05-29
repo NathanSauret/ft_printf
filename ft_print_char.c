@@ -6,13 +6,13 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:58:54 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/29 15:09:59 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:35:12 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_print_char(const char *el)
+void	ft_print_char(char el)
 {
-	write(1, &el[0], 1);
+	write(1, &el, 1);
 }

@@ -13,7 +13,7 @@ OBJ = $(SRC:.c=.o)
 
 all: libft_all $(NAME)
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ) $(LIBFT_OBJ)
 
 clean: libft_clean
 	rm -f $(LIBFT_OBJ) $(OBJ)

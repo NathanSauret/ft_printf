@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:57:50 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 16:05:07 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 16:55:07 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 static int	ft_choose_print(const char *text, va_list ptr)
 {
+	int	func_res_len;
+
 	if (*text == 'c')
-		ft_print_char(*va_arg(ptr, char *));
+		func_res_len = ft_print_char(va_arg(ptr, int));
 	else if (*text == 's')
-		ft_print_str(va_arg(ptr, char *));
+		func_res_len = ft_print_str(va_arg(ptr, char *));
 	else if (*text == 'p')
 		ft_print_pointer(va_arg(ptr, void *));
 	else if (*text == 'd')
@@ -32,58 +34,35 @@ static int	ft_choose_print(const char *text, va_list ptr)
 		ft_print_char('%');
 	else
 		return (0);
-	return (1);
+	return (func_res_len);
 }
 
 int	ft_printf(const char *text, ...)
 {
 	va_list	ptr;
-	int		print_choice_int;
+	int		len;
 
+	len = 0;
 	va_start(ptr, text);
 	while (*text)
 	{
 		if (*text == '%')
 		{
 			text++;
-			print_choice_int = ft_choose_print(text, ptr);
-			if (!print_choice_int)
+			len += ft_choose_print(text, ptr);
+			if (len == 0)
 			{
 				ft_print_char('%');
 				ft_print_char(*text);
 			}
 		}
 		else
+		{
 			ft_print_char(*text);
+			len++;
+		}
 		text++;
 	}
 	va_end(ptr);
-	return (1);
+	return (len);
 }
-
-/*
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	char	*param;
-
-	param = argv[2];
-	if (argc == 3)
-	{
-		if (!ft_atoi(param))
-		{
-			ft_printf(argv[1], param);
-			ft_print_char('\n');
-			printf(argv[1], argv[2]);
-		}
-		else
-		{
-			ft_printf(argv[1], ft_atoi(param));
-			ft_print_char('\n');
-			printf(argv[1], ft_atoi(argv[2]));
-		}
-	}
-	printf("\n");
-	return (0);
-}
-*/

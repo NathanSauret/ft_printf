@@ -1,24 +1,130 @@
 NAME = libftprintf.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+include Libft/Makefile
 
 SRC = ./ft_printf.c	\
 		./ft_print_char.c	\
 		./ft_print_str.c	\
-		./ft_print_pointer.c
+		./ft_print_pointer.c	\
+		./ft_print_int.c	\
+		./ft_print_unsigned_int
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all: libft_all $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-clean:
-	rm -f $(OBJ)
+clean: libft_clean
+	rm -f $(LIBFT_OBJ) $(OBJ)
 
-fclean: clean
+fclean: libft_fclean clean
 	rm -f $(NAME)
 
-re: fclean all
+re: libft_re fclean all
 
-.PHONY: all bonus clean fclean re
+coffee:
+	while [ true ]; do \
+		clear; \
+		echo ""; \
+		echo "                   ("; \
+		echo "	                     )     ("; \
+		echo "               ___...(-------)-....___"; \
+		echo '           .-""       )    (          ""-.'; \
+		echo "      .-''''|-._             )         _.-|"; \
+		echo '     /  .--.|   `""---...........---""`   |'; \
+		echo "    /  /    |                             |"; \
+		echo "    |  |    |                             |"; \
+		echo "     \  \   |       MY CODE IS LAME       |"; \
+		echo "      '\ '\ |                             |"; \
+		echo "        '\ '|    BUT MY COFFEE IS GOOD    |"; \
+		echo "        _/ /\                             /"; \
+		echo "       (__/  \                           /"; \
+		echo '    _..---""` \                         /`""---.._'; \
+		echo " .-'           \                       /          '-."; \
+		echo ":               '-.__             __.-'              :"; \
+		echo ':                  ) ""---...---"" (                :'; \
+		echo "\'._                '"--...___...--"'              _.'"; \
+		echo '   \""--..__                              __..--""/'; \
+		echo "     '._     """----.....______.....----"""         _.'"; \
+		echo '         ""--..,,_____            _____,,..--"""'''; \
+		echo '                      """------"""'; \
+		sleep 0.3; \
+		one; \
+		clear; \
+		echo ""; \
+		echo "                 ("; \
+		echo "	                  )      ("; \
+		echo "               ___..(.------)--....___"; \
+		echo '           .-""       )   (           ""-.'; \
+		echo "      .-''''|-._      (       )        _.-|"; \
+		echo '     /  .--.|   `""---...........---""`   |'; \
+		echo "    /  /    |                             |"; \
+		echo "    |  |    |                             |"; \
+		echo "     \  \   |       MY CODE IS LAME       |"; \
+		echo "      '\ '\ |                             |"; \
+		echo "        '\ '|    BUT MY COFFEE IS GOOD    |"; \
+		echo "        _/ /\                             /"; \
+		echo "       (__/  \                           /"; \
+		echo '    _..---""` \                         /`""---.._'; \
+		echo " .-'           \                       /          '-."; \
+		echo ":               '-.__             __.-'              :"; \
+		echo ':                  ) ""---...---"" (                :'; \
+		echo "\'._                '"--...___...--"'              _.'"; \
+		echo '   \""--..__                              __..--""/'; \
+		echo "     '._     """----.....______.....----"""         _.'"; \
+		echo '         ""--..,,_____            _____,,..--"""'''; \
+		echo '                      """------"""'; \
+		sleep 0.3; \
+		clear; \
+		echo ""; \
+		echo "               ("; \
+		echo "	                  )     ("; \
+		echo "               ___..(.------)--....___"; \
+		echo '           .-""      )    (           ""-.'; \
+		echo "      .-''''|-._      (       )        _.-|"; \
+		echo '     /  .--.|   `""---...........---""`   |'; \
+		echo "    /  /    |                             |"; \
+		echo "    |  |    |                             |"; \
+		echo "     \  \   |       MY CODE IS LAME       |"; \
+		echo "      '\ '\ |                             |"; \
+		echo "        '\ '|    BUT MY COFFEE IS GOOD    |"; \
+		echo "        _/ /\                             /"; \
+		echo "       (__/  \                           /"; \
+		echo '    _..---""` \                         /`""---.._'; \
+		echo " .-'           \                       /          '-."; \
+		echo ":               '-.__             __.-'              :"; \
+		echo ':                  ) ""---...---"" (                :'; \
+		echo "\'._                '"--...___...--"'              _.'"; \
+		echo '   \""--..__                              __..--""/'; \
+		echo "     '._     """----.....______.....----"""         _.'"; \
+		echo '         ""--..,,_____            _____,,..--"""'''; \
+		echo '                      """------"""'; \
+		sleep 0.3; \
+		clear; \
+		echo ""; \
+		echo "             (         ) "; \
+		echo "	              )        ("; \
+		echo "               ___)...----)----....___"; \
+		echo '           .-""      )    (           ""-.'; \
+		echo "      .-''''|-._      (       )        _.-|"; \
+		echo '     /  .--.|   `""---...........---""`   |'; \
+		echo "    /  /    |                             |"; \
+		echo "    |  |    |                             |"; \
+		echo "     \  \   |       MY CODE IS LAME       |"; \
+		echo "      '\ '\ |                             |"; \
+		echo "        '\ '|    BUT MY COFFEE IS GOOD    |"; \
+		echo "        _/ /\                             /"; \
+		echo "       (__/  \                           /"; \
+		echo '    _..---""` \                         /`""---.._'; \
+		echo " .-'           \                       /          '-."; \
+		echo ":               '-.__             __.-'              :"; \
+		echo ':                  ) ""---...---"" (                :'; \
+		echo "\'._                '"--...___...--"'              _.'"; \
+		echo '   \""--..__                              __..--""/'; \
+		echo "     '._     """----.....______.....----"""         _.'"; \
+		echo '         ""--..,,_____            _____,,..--"""'''; \
+		echo '                      """------"""'; \
+		sleep 0.3; \
+	done
+
+.PHONY: all libft_all clean libft_clean fclean libft_fclean re libft_re coffee

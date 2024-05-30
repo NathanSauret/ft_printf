@@ -6,11 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:25:55 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/28 16:13:51 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:03:49 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memmove(void *ft_dest, void *ft_src, size_t n)
 {
@@ -40,29 +40,3 @@ void	*ft_memmove(void *ft_dest, void *ft_src, size_t n)
 	}
 	return (dest);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int	main(int argc, char *argv[])
-{
-	char	*src;
-	char	dest1[500];
-	char	dest2[500];
-	int		n;
-
-	if (argc == 3)
-	{
-		src = argv[1];
-		n = atoi(argv[2]);
-
-		ft_memmove(dest1, src, n);
-		printf("ft_memmove: %s\n", dest1);
-
-		memmove(dest2, src, n);
-		printf("memmove: %s\n", dest2);
-	}
-	return (0);
-}
-*/

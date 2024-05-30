@@ -6,16 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:19:01 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/22 11:38:36 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:04:05 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putnbr_fd(int ft_n, int fd)
 {
@@ -36,15 +31,3 @@ void	ft_putnbr_fd(int ft_n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd((n % 10) + '0', fd);
 }
-
-/*
-#include <stdlib.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 3)
-	{
-		ft_putnbr_fd(atoi(argv[1]), atoi(argv[2]));
-	}
-	return (0);
-}
-*/

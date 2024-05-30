@@ -6,21 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:43:13 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/23 14:38:36 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:04:48 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str++)
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -50,13 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join[i] = '\0';
 	return (join);
 }
-
-/*
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 3)
-		printf("%s\n", ft_strjoin(argv[1], argv[2]));
-	return (0);
-}
-*/

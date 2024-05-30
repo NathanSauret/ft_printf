@@ -6,42 +6,13 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 12:05:40 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/28 11:07:12 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:05:18 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-static int	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str++)
-		len++;
-	return (len);
-}
-
-static size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
-{
-	size_t	srclen;
-	size_t	i;
-
-	srclen = ft_strlen(src);
-	if (siz == 0)
-		return (srclen);
-	i = 0;
-	while (i < siz - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (srclen);
-}
-
-int	char_in_set(char c, const char *set)
+static int	char_in_set(char c, const char *set)
 {
 	while (*set)
 	{
@@ -72,15 +43,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trim, &s1[start], (end - start + 1));
 	return (trim);
 }
-
-/*
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 3)
-	{
-		printf("%s\n", ft_strtrim(argv[1], argv[2]));
-	}
-	return (0);
-}
-*/

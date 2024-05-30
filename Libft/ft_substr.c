@@ -6,21 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:26:55 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/28 11:31:32 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:05:24 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str++)
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 static char	*return_empty_malloc(void)
 {
@@ -61,18 +51,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
-/*
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	char	*sub;
-
-	if (argc == 4)
-	{
-		sub = ft_substr(argv[1], atoi(argv[2]), atoi(argv[3]));
-		printf("%s\n", sub);
-		free(sub);
-	}
-}
-*/

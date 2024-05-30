@@ -6,13 +6,13 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:20:00 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 10:33:19 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 15:28:10 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_str(char *el)
+void	ft_print_str(const char *el)
 {
 	while (*el)
 		ft_print_char(*el++);

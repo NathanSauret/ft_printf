@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:12:48 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/24 17:21:12 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:59:42 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,3 @@ int	ft_atoi(const char *nptr)
 		res = 10 * res + (*nptr++ - '0');
 	return (res * sign);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int argc, char *argv[])
-{
-	char	*str;
-
-	if (argc == 2)
-	{
-		str = argv[1];
-		printf("%d\n", ft_atoi(str));
-		printf("%d\n", atoi(str));
-	}
-	return (0);
-}
-*/

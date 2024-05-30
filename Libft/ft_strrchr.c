@@ -6,11 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:39:00 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/27 16:23:19 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:58:07 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -29,17 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s + i);
 	return ((char *)ptr);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 3)
-	{
-		printf("%s\n", ft_strrchr(argv[1], argv[2][0]));
-		printf("%s\n", strrchr(argv[1], argv[2][0]));
-	}
-	return (0);
-}
-*/

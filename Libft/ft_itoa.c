@@ -6,11 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:04:21 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/24 15:14:46 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:00:29 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	get_int_size_in_str(int n)
 {
@@ -62,18 +62,3 @@ char	*ft_itoa(int ft_n)
 	number[str_len] = '\0';
 	return (number);
 }
-
-/*
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	char	*str;
-
-	if (argc == 2)
-	{
-		str = ft_itoa(atoi(argv[1]));
-		printf("%s\n", str);
-	}
-	return (0);
-}
-*/

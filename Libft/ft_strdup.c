@@ -6,37 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:14:32 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/22 11:39:01 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:55:27 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str++)
-		len++;
-	return (len);
-}
-
-static size_t	ft_strlcpy(char *dst, char *src, size_t ft_siz)
-{
-	int	i;
-	int	siz;
-
-	siz = ft_siz;
-	i = 0;
-	while (i < siz - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = 0;
-	return (ft_strlen(src));
-}
+#include "libft.h"
 
 char	*ft_strdup(char *s)
 {
@@ -51,25 +25,3 @@ char	*ft_strdup(char *s)
 	dup[len] = '\0';
 	return (dup);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	char	*dup1;
-	char	*dup2;
-
-	if (argc == 2)
-	{
-		dup1 = ft_strdup(argv[1]);
-		printf("%s\n", dup1);
-		free(dup1);
-
-		dup2 = strdup(argv[1]);
-		printf("%s\n", dup2);
-		free (dup2);
-	}
-	return (0);
-}
-*/

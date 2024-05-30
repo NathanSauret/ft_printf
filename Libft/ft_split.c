@@ -6,11 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:34:01 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/28 14:49:52 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:04:29 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_count_words(char const *s, char c)
 {
@@ -31,7 +31,7 @@ static int	ft_count_words(char const *s, char c)
 	return (word_count);
 }
 
-int	ft_free_list(char **list_ptr, char **list)
+static int	ft_free_list(char **list_ptr, char **list)
 {
 	while (list_ptr > list)
 	{
@@ -42,7 +42,7 @@ int	ft_free_list(char **list_ptr, char **list)
 	return (0);
 }
 
-int	ft_split_helper(char **list_ptr, char **list, char const *s, char c)
+static int	ft_split_helper(char **list_ptr, char **list, char const *s, char c)
 {
 	char	*seg;
 	char	*seg_ptr;
@@ -88,37 +88,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (list);
 }
-
-/*
-#include <stdio.h>
-void	free_all(char **list)
-{
-	int	i;
-
-	i = 0;
-	while (list[i])
-	{
-		free(list[i]);
-		i++;
-	}
-	free(list);
-}
-int	main(int argc, char *argv[])
-{
-	char	**list;
-	int		i;
-
-	if (argc == 3)
-	{
-		list = ft_split(argv[1], argv[2][0]);
-		i = 0;
-		while (list[i])
-		{
-			printf("%s\n", list[i]);
-			i++;
-		}
-		free_all(list);
-	}
-	return (0);
-}
-*/

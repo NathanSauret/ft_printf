@@ -6,11 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:34:54 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/27 15:41:57 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:57:48 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -35,18 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <bsd/string.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 4)
-	{
-		printf("%s\n", ft_strnstr(argv[1], argv[2], atoi(argv[3])));
-		printf("%s\n", strnstr(argv[1], argv[2], atoi(argv[3])));
-	}
-	return (0);
-}
-*/

@@ -6,16 +6,11 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:16:07 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/23 17:11:48 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/30 14:04:00 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -31,15 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	ft_putchar_fd('\n', fd);
 }
-
-/*
-#include <stdlib.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 3)
-	{
-		ft_putendl_fd(argv[1], atoi(argv[2]));
-	}
-	return (0);
-}
-*/

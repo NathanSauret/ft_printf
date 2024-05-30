@@ -47,7 +47,6 @@ LIBFT_SRC = ./Libft/ft_atoi.c	\
 LIBFT_OBJ = $(LIBFT_SRC:.c=.o)
 
 all:
-	echo "This is the libft Makefile"
 
 libft_all: $(LIBFT_NAME)
 $(LIBFT_NAME): $(LIBFT_OBJ)
@@ -60,3 +59,5 @@ libft_fclean: libft_clean
 	rm -f $(LIBFT_NAME)
 
 libft_re: libft_fclean libft_all
+
+.PHONY: all libft_all libft_clean libft_fclean libft_re

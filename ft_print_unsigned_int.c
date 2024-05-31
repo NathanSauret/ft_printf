@@ -6,17 +6,39 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:23:05 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 16:05:39 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/31 15:20:02 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-void	ft_print_unsigned_int(unsigned int el)
+static int	get_unsigned_int_len(unsigned int el)
 {
+	int	len;
+
 	if (el == 0)
-		return ;
-	ft_print_char(el % 10);
-	ft_print_unsigned_int(el / 10);
+		return (1);
+	len = 0;
+	if (el < 0)
+	{
+		el *= -1;
+		len ++;
+	}
+	while (el > 0)
+	{
+		el /= 10;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_print_unsigned_int(unsigned int el)
+{
+	char	*str_el;
+
+	str_el = ft_itoa(el);
+	ft_print_str(str_el);
+	free(str_el);
+	return (get_unsigned_int_len(el));
 }

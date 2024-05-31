@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:20:00 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 16:54:22 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:44:17 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ int	ft_print_str(const char *el)
 {
 	int	len;
 
+	if (!el)
+	{
+		ft_print_str("(null)");
+		return (6);
+	}
 	if (*el == '\0')
 		return (0);
 	len = 0;

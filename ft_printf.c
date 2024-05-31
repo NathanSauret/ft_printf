@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:57:50 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 16:55:07 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:33:07 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_choose_print(const char *text, va_list ptr)
 	else if (*text == '%')
 		ft_print_char('%');
 	else
-		return (0);
+		return (-1);
 	return (func_res_len);
 }
 
@@ -50,7 +50,7 @@ int	ft_printf(const char *text, ...)
 		{
 			text++;
 			len += ft_choose_print(text, ptr);
-			if (len == 0)
+			if (len == -1)
 			{
 				ft_print_char('%');
 				ft_print_char(*text);

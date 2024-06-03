@@ -42,7 +42,8 @@ LIBFT_SRC = ./Libft/ft_atoi.c	\
 			./Libft/ft_lstdelone_bonus.c	\
 			./Libft/ft_lstclear_bonus.c	\
 			./Libft/ft_lstiter_bonus.c	\
-			./Libft/ft_lstmap_bonus.c
+			./Libft/ft_lstmap_bonus.c	\
+			./Libft/ft_uitoa.c
 
 LIBFT_OBJ = $(LIBFT_SRC:.c=.o)
 

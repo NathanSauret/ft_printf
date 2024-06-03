@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:21:54 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/31 16:08:11 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/03 12:51:48 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	get_hex_len(unsigned int el)
 {
 	int	len;
 
+	if (el == 0)
+		return (1);
 	len = 0;
 	while (el > 0)
 	{
@@ -25,28 +27,28 @@ static int	get_hex_len(unsigned int el)
 	return (len);
 }
 
-static int	ft_print_hex_helper(char type_of_hex, unsigned int el, int len)
+static int	ft_print_hex_helper(char *hex_set, unsigned int el, int len)
 {
 	char	*res;
-	char	*hex_set;
 	int		i;
 
-	res = malloc(sizeof(int) * 8);
+	res = malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (0);
-	if (type_of_hex == 'x')
-		hex_set = "0123456789abcdef";
-	else
-		hex_set = "0123456789ABCDEF";
 	i = 0;
-	while (el > 0)
+	while (i < len)
 	{
-		res[i] = hex_set[el % 16];
+		res[len - 1 - i] = hex_set[el % 16];
 		el /= 16;
 		i++;
 	}
-	while (i >= 0)
-		ft_print_char(res[i--]);
+	res[len] = '\0';
+	i = 0;
+	while (res[i] != '\0')
+	{
+		ft_print_char(res[i]);
+		i++;
+	}
 	free(res);
 	return (len);
 }
@@ -54,16 +56,12 @@ static int	ft_print_hex_helper(char type_of_hex, unsigned int el, int len)
 int	ft_print_hex(char type_of_hex, unsigned int el)
 {
 	int		len;
+	char	*hex_set;
 
-	if (el < 0)
-	{
-		el = 4294967296 - el;
-	}
-	else if (el == 0)
-	{
-		ft_print_char('0');
-		return (1);
-	}
+	if (type_of_hex == 'x')
+		hex_set = "0123456789abcdef";
+	else
+		hex_set = "0123456789ABCDEF";
 	len = get_hex_len(el);
-	return (ft_print_hex_helper(type_of_hex, el, len));
+	return (ft_print_hex_helper(hex_set, el, len));
 }

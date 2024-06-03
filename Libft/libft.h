@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:34:44 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/30 14:14:50 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/03 11:12:46 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
 
 char	*ft_itoa(int ft_n);
 char	*ft_strdup(char *s);
+char	*ft_uitoa(unsigned int ft_n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	**ft_split(char const *s, char c);

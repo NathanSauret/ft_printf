@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:39:40 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/31 15:04:25 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/03 12:56:00 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	d(char *argv[])
 	printf(" - %d\n", res);
 }
 
+
 void	n(char *argv[])
 {
 	int	res;
@@ -50,16 +51,6 @@ void	n(char *argv[])
 	res = ft_printf(argv[1], NULL);
 	printf(" - %d\n", res);
 	res = printf(argv[1], NULL);
-	printf(" - %d\n", res);
-}
-
-void	l(char *argv[])
-{
-	int	res;
-
-	res = ft_printf(argv[1], strtol(argv[3], NULL, 10));
-	printf(" - %d\n", res);
-	res = printf(argv[1], strtol(argv[3], NULL, 10));
 	printf(" - %d\n", res);
 }
 
@@ -78,8 +69,6 @@ int	main(int argc, char *argv[])
 			d(argv);
 		else if (argv[2][0] == 'n')
 			n(argv);
-		else if (argv[2][0] == 'l')
-			l(argv);
 	}
 	return (0);
 }

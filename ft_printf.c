@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:57:50 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/31 16:00:09 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/03 12:44:24 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static int	ft_choose_print(const char *text, va_list ptr)
 	else if (*text == 'i')
 		func_res_len = ft_print_int(va_arg(ptr, int));
 	else if (*text == 'u')
-		func_res_len = ft_print_unsigned_int(va_arg(ptr, unsigned int));
+		func_res_len = ft_print_unsigned(va_arg(ptr, unsigned int));
 	else if (*text == 'x' || *text == 'X')
-		func_res_len = ft_print_hex(*text, va_arg(ptr, unsigned int));
+		func_res_len = ft_print_hex(*text, va_arg(ptr, int));
 	else if (*text == '%')
 	{
 		ft_print_char('%');

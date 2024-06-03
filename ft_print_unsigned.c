@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:23:05 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/31 15:20:02 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/03 12:57:04 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-static int	get_unsigned_int_len(unsigned int el)
+static int	get_unsigned_len(unsigned int el)
 {
 	int	len;
 
@@ -33,12 +33,12 @@ static int	get_unsigned_int_len(unsigned int el)
 	return (len);
 }
 
-int	ft_print_unsigned_int(unsigned int el)
+int	ft_print_unsigned(unsigned int el)
 {
 	char	*str_el;
 
-	str_el = ft_itoa(el);
+	str_el = ft_uitoa(el);
 	ft_print_str(str_el);
 	free(str_el);
-	return (get_unsigned_int_len(el));
+	return (get_unsigned_len(el));
 }

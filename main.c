@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:39:40 by nsauret           #+#    #+#             */
-/*   Updated: 2024/06/03 12:56:00 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/06 14:38:47 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,15 @@ void	n(char *argv[])
 // argv[3]: Variable
 int	main(int argc, char *argv[])
 {
-	if (argc == 4)
+	if (argc == 2)
+	{
+		if (argv[1][0] == '0')
+		{
+			int a = ft_printf(0);
+			ft_printf("%d\n", a);
+		}
+	}
+	else if (argc == 4)
 	{
 		if (argv[2][0] == 'c')
 			c(argv);

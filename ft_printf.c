@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:57:50 by nsauret           #+#    #+#             */
-/*   Updated: 2024/06/03 12:44:24 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/06 14:17:55 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	ft_printf(const char *text, ...)
 	va_list	ptr;
 	int		len;
 
+	if (!text)
+		return (-1);
 	len = 0;
 	va_start(ptr, text);
 	while (*text)

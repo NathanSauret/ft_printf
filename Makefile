@@ -22,6 +22,7 @@ fclean: libft_fclean clean
 	rm -f $(NAME) a.out
 	rm -rf .vscode
 
-re: libft_re fclean all
+re: libft_re
+	make fclean all
 
 .PHONY: all clean fclean re

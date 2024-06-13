@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:15:21 by nsauret           #+#    #+#             */
-/*   Updated: 2024/05/31 11:29:02 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/13 10:30:23 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	ft_print_pointer(unsigned long el)
 	hex = "0123456789abcdef";
 	len = get_hex_len(el);
 	hex_value = malloc(sizeof(void) * len + 1);
+	if (!hex_value)
+		return (0);
 	i = len - 1;
 	while (i >= 0)
 	{

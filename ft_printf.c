@@ -6,7 +6,7 @@
 /*   By: nsauret <nsauret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:57:50 by nsauret           #+#    #+#             */
-/*   Updated: 2024/06/13 10:32:22 by nsauret          ###   ########.fr       */
+/*   Updated: 2024/06/17 11:15:12 by nsauret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,27 @@ static int	ft_choose_print(const char *text, va_list ptr)
 	return (func_res_len);
 }
 
-static void	error_return(const char *text)
+static int	verif_pourcentage(const char *text, int var_len)
 {
-	ft_print_char('%');
-	ft_print_char(*text);
+	int	len;
+
+	len = 0;
+	if (var_len == -1)
+	{
+		ft_print_char('%');
+		ft_print_char(*text);
+		len += 2;
+	}
+	else
+		len += var_len;
+	return (len);
 }
 
 int	ft_printf(const char *text, ...)
 {
 	va_list	ptr;
 	int		len;
+	int		var_len;
 
 	if (!text)
 		return (-1);
@@ -58,9 +69,8 @@ int	ft_printf(const char *text, ...)
 		if (*text == '%')
 		{
 			text++;
-			len += ft_choose_print(text, ptr);
-			if (len == -1)
-				error_return(text);
+			var_len = ft_choose_print(text, ptr);
+			len += verif_pourcentage(text, var_len);
 		}
 		else
 		{
